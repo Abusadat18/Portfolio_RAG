@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import RichMessage from "./RichMessage";
 
 export interface Message {
   role: "user" | "assistant";
@@ -24,13 +25,17 @@ export default function MessageBubble({ role, content, streaming }: Message) {
         </div>
       )}
       <div
-        className={`max-w-[85%] sm:max-w-[75%] px-4 py-3 rounded-2xl text-[15px] sm:text-base leading-relaxed ${
+        className={`max-w-[85%] sm:max-w-[80%] px-4 py-3 rounded-2xl text-[15px] sm:text-base leading-relaxed ${
           isUser
             ? "bg-[#33ff66]/10 border border-[#33ff66]/20 text-[var(--text-primary)] rounded-br-sm"
             : "bg-[var(--bg-secondary)] border border-[var(--border)] text-[var(--text-primary)] rounded-bl-sm"
         }`}
       >
-        {content}
+        {isUser ? (
+          content
+        ) : (
+          <RichMessage content={content} />
+        )}
         {streaming && (
           <motion.span
             animate={{ opacity: [1, 0.3, 1] }}

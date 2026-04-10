@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import GlitchText from "@/components/ui/GlitchText";
 import Typewriter from "@/components/ui/Typewriter";
+import AnimatedGrid from "@/components/ui/AnimatedGrid";
 import { portfolio } from "@/data/portfolio";
 
 const socials = [
@@ -23,15 +24,8 @@ const fadeUp = {
 export default function Hero() {
   return (
     <section className="hero-gradient min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 relative overflow-hidden">
-      {/* Decorative grid lines */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(51,255,102,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(51,255,102,0.3) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+      {/* Animated grid with intersection dots and corner marks */}
+      <AnimatedGrid />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         {/* Status badge */}

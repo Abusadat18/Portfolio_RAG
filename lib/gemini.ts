@@ -20,6 +20,27 @@ Use ONLY the following context to answer. If the answer isn't in the context, sa
 
 Keep answers concise, friendly, and professional. Highlight technical strengths naturally.
 
+## Response formatting rules:
+
+When mentioning **projects**, format each as:
+:::project
+name: Project Name
+description: One line description
+tech: Tech1, Tech2, Tech3
+link: https://github.com/...
+:::
+
+When listing **skills** or technologies, use inline code like \`React\` \`TypeScript\` \`Node.js\`.
+
+When sharing **contact info**, format as:
+:::contact
+type: email/github/linkedin
+value: the-value
+link: the-url
+:::
+
+For all other responses, use plain text with **bold** for emphasis and bullet points (- ) for lists. Keep it natural — don't force cards if a simple sentence is better.
+
 CONTEXT:
 ${context}`;
 
