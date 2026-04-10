@@ -2,14 +2,45 @@
 
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { portfolio } from "@/data/portfolio";
+import GradientOrbs from "@/components/ui/GradientOrbs";
+import {
+  SiTypescript, SiJavascript, SiPython, SiHtml5, SiCss,
+  SiNextdotjs, SiReact, SiNodedotjs, SiExpress, SiFastapi, SiTailwindcss,
+  SiLangchain, SiFastify,
+  SiPostgresql, SiMongodb, SiRedis,
+  SiGit, SiDocker, SiGithubactions, SiVercel,
+} from "@icons-pack/react-simple-icons";
+import { Database, BrainCircuit, Sparkles } from "lucide-react";
 
-const ALL_SKILLS = [
-  ...portfolio.skills.languages,
-  ...portfolio.skills.frameworks,
-  ...portfolio.skills.ai_ml.slice(0, 4),
-  ...portfolio.skills.databases.slice(0, 3),
-  ...portfolio.skills.tools.slice(0, 4),
+interface Skill {
+  name: string;
+  icon: React.ComponentType<{ className?: string; size?: number }>;
+}
+
+const SKILLS: Skill[] = [
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "JavaScript", icon: SiJavascript },
+  { name: "Python", icon: SiPython },
+  { name: "HTML", icon: SiHtml5 },
+  { name: "CSS", icon: SiCss },
+  { name: "Next.js", icon: SiNextdotjs },
+  { name: "React", icon: SiReact },
+  { name: "Node.js", icon: SiNodedotjs },
+  { name: "Express", icon: SiExpress },
+  { name: "FastAPI", icon: SiFastapi },
+  { name: "Tailwind", icon: SiTailwindcss },
+  { name: "LangChain", icon: SiLangchain },
+  { name: "OpenAI", icon: BrainCircuit },
+  { name: "Gemini", icon: Sparkles },
+  { name: "SQL", icon: Database },
+  { name: "PostgreSQL", icon: SiPostgresql },
+  { name: "MongoDB", icon: SiMongodb },
+  { name: "Redis", icon: SiRedis },
+  { name: "Git", icon: SiGit },
+  { name: "Docker", icon: SiDocker },
+  { name: "GH Actions", icon: SiGithubactions },
+  { name: "Vercel", icon: SiVercel },
+  { name: "RAG", icon: SiFastify },
 ];
 
 const container = {
@@ -31,69 +62,42 @@ const item = {
 
 export default function SkillsGrid() {
   return (
-    <section className="w-full max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
-      <SectionHeader
-        tag="Tech Stack"
-        title="Skills & Technologies"
-      />
+    <section className="relative w-full max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+      <GradientOrbs variant="section" />
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-60px" }}
-        className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-3 sm:gap-4"
-      >
-        {ALL_SKILLS.map((skill) => (
-          <motion.div
-            key={skill}
-            variants={item}
-            whileHover={{
-              scale: 1.1,
-              borderColor: "rgba(51,255,102,0.4)",
-              boxShadow: "0 0 25px rgba(51,255,102,0.12)",
-              y: -4,
-            }}
-            className="glass-card flex flex-col items-center justify-center p-3 sm:p-4 aspect-square cursor-default"
-          >
-            <span className="text-[#33ff66] text-2xl sm:text-3xl font-bold font-code leading-none mb-1.5">
-              {getSkillIcon(skill)}
-            </span>
-            <span className="text-[var(--text-secondary)] text-[10px] sm:text-xs text-center leading-tight">
-              {skill}
-            </span>
-          </motion.div>
-        ))}
-      </motion.div>
+      <div className="relative z-10">
+        <SectionHeader
+          tag="Tech Stack"
+          title="Skills & Technologies"
+        />
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-60px" }}
+          className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-3 sm:gap-4"
+        >
+          {SKILLS.map(({ name, icon: Icon }) => (
+            <motion.div
+              key={name}
+              variants={item}
+              whileHover={{
+                scale: 1.1,
+                borderColor: "rgba(51,255,102,0.4)",
+                boxShadow: "0 0 25px rgba(51,255,102,0.12)",
+                y: -4,
+              }}
+              className="glass-card flex flex-col items-center justify-center p-3 sm:p-4 aspect-square cursor-default"
+            >
+              <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-[#33ff66] mb-2" size={32} />
+              <span className="text-[var(--text-secondary)] text-[10px] sm:text-xs text-center leading-tight">
+                {name}
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
-}
-
-function getSkillIcon(skill: string): string {
-  const icons: Record<string, string> = {
-    TypeScript: "TS",
-    JavaScript: "JS",
-    Python: "Py",
-    SQL: "DB",
-    HTML: "<>",
-    CSS: "#",
-    "Next.js": "N",
-    React: "Re",
-    "Node.js": "No",
-    Express: "Ex",
-    FastAPI: "Fa",
-    TailwindCSS: "Tw",
-    LangChain: "LC",
-    "RAG Pipelines": "RG",
-    "OpenAI API": "AI",
-    "Gemini API": "Gm",
-    PostgreSQL: "Pg",
-    MongoDB: "Mg",
-    Redis: "Rd",
-    Git: "Gt",
-    Docker: "Dk",
-    "GitHub Actions": "GA",
-    Vercel: "Vc",
-  };
-  return icons[skill] || skill.slice(0, 2).toUpperCase();
 }

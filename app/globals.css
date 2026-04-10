@@ -89,18 +89,19 @@ body::after {
   z-index: 9999;
 }
 
-/* ─── Gradient bg for hero ──────────────────────────────────── */
-.hero-gradient {
-  background:
-    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(51, 255, 102, 0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 80% 50%, rgba(51, 255, 102, 0.03) 0%, transparent 50%),
-    radial-gradient(ellipse 40% 40% at 20% 50%, rgba(51, 255, 102, 0.03) 0%, transparent 50%);
-}
-
 /* ─── Scrollbar helper ──────────────────────────────────────── */
 .scrollbar-thin::-webkit-scrollbar {
   width: 5px;
 }
 .scrollbar-track-transparent::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* ─── Hide native cursor on pointer devices ────────────────── */
+@media (pointer: fine) {
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
 }

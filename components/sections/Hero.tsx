@@ -1,15 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SiGithub } from "@icons-pack/react-simple-icons";
+import { Mail, UserCircle } from "lucide-react";
 import GlitchText from "@/components/ui/GlitchText";
 import Typewriter from "@/components/ui/Typewriter";
-import AnimatedGrid from "@/components/ui/AnimatedGrid";
+import GradientOrbs from "@/components/ui/GradientOrbs";
 import { portfolio } from "@/data/portfolio";
 
 const socials = [
-  { label: "GitHub", href: portfolio.personal.github, icon: "GH" },
-  { label: "LinkedIn", href: portfolio.personal.linkedin, icon: "IN" },
-  { label: "Email", href: `mailto:${portfolio.personal.email}`, icon: "@" },
+  { label: "GitHub", href: portfolio.personal.github, icon: SiGithub },
+  { label: "LinkedIn", href: portfolio.personal.linkedin, icon: UserCircle },
+  { label: "Email", href: `mailto:${portfolio.personal.email}`, icon: Mail },
 ];
 
 const fadeUp = {
@@ -23,9 +25,8 @@ const fadeUp = {
 
 export default function Hero() {
   return (
-    <section className="hero-gradient min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 relative overflow-hidden">
-      {/* Animated grid with intersection dots and corner marks */}
-      <AnimatedGrid />
+    <section className="min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 relative overflow-hidden">
+      <GradientOrbs variant="hero" />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         {/* Status badge */}
@@ -94,7 +95,7 @@ export default function Hero() {
                          text-[var(--text-secondary)] hover:text-[#33ff66] transition-colors"
               title={s.label}
             >
-              <span className="font-code text-sm font-bold">{s.icon}</span>
+              <s.icon className="w-5 h-5" />
             </motion.a>
           ))}
         </motion.div>
