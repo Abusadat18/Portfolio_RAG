@@ -61,12 +61,12 @@ export default function Experience() {
                   className="glass-card p-6 sm:p-8"
                 >
                   {/* Current role badge */}
-                  {idx === 0 && (
+                  {/* {idx === 0 && (
                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#33ff66]/10 border border-[#33ff66]/20 text-[#33ff66] text-xs font-code mb-4">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#33ff66] animate-pulse" />
                       Current
                     </div>
-                  )}
+                  )} */}
 
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-4">
                     <div>
