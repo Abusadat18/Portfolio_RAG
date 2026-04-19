@@ -97,11 +97,9 @@ body::after {
   background: transparent;
 }
 
-/* ─── Hide native cursor on pointer devices ────────────────── */
-@media (pointer: fine) {
-  *,
-  *::before,
-  *::after {
-    cursor: none !important;
-  }
+/* ─── Hide native cursor when custom cursor is active ──────── */
+.custom-cursor-active *,
+.custom-cursor-active *::before,
+.custom-cursor-active *::after {
+  cursor: none !important;
 }

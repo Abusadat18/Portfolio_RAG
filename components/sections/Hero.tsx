@@ -15,12 +15,6 @@ const socials = [
   { label: "Email", href: `mailto:${portfolio.personal.email}`, icon: Mail },
 ];
 
-const stats = [
-  { value: `${portfolio.projects.length}+`, label: "Projects" },
-  { value: `${Object.values(portfolio.skills).flat().length}+`, label: "Technologies" },
-  { value: `${portfolio.experience.length}+`, label: "Roles" },
-];
-
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   show: (delay: number) => ({
@@ -34,6 +28,15 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 pt-20 relative overflow-hidden">
       <GradientOrbs variant="hero" />
+
+      {/* Noise overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.2] pointer-events-none z-[1]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundSize: "256px 256px",
+        }}
+      />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         {/* Status badge */}
@@ -77,29 +80,6 @@ export default function Hero() {
         >
           {portfolio.about.split("\n\n")[0]}
         </motion.p>
-
-        {/* Stats row */}
-        <motion.div
-          custom={0.6}
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
-          className="flex items-center justify-center gap-6 sm:gap-10 mb-10 sm:mb-12"
-        >
-          {stats.map((stat, i) => (
-            <div key={stat.label} className="text-center">
-              {i > 0 && (
-                <div className="hidden" />
-              )}
-              <p className="text-2xl sm:text-3xl font-bold text-[#33ff66] font-code">
-                {stat.value}
-              </p>
-              <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-1">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </motion.div>
 
         {/* Social icons row */}
         <motion.div
@@ -170,21 +150,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="w-6 h-10 rounded-full border-2 border-[var(--text-secondary)]/30 flex justify-center pt-2"
-        >
-          <motion.div className="w-1 h-2 rounded-full bg-[#33ff66]/60" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
