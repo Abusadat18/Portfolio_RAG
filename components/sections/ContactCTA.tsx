@@ -64,7 +64,7 @@ function ContactCard({ icon: Icon, label, value, href, external }: {
       </div>
       <div>
         <p className="text-[var(--text-secondary)] text-sm mb-0.5">{label}</p>
-        <p className="text-[var(--text-primary)] text-lg font-medium group-hover:text-[#33ff66] transition-colors">
+        <p className="text-[var(--text-primary)] text-lg font-medium group-hover:text-[#33ff66] transition-colors break-all">
           {value}
         </p>
       </div>
