@@ -25,18 +25,22 @@ When I'm not coding, you'll find me contributing to open source, writing technic
 
   experience: [
     {
-      company: "Company Name Here",
-      role: "Full Stack Developer",
-      duration: "Jan 2024 – Present",
-      location: "Remote",
+      company: "SystemStar",
+      role: "Software Engineer Intern",
+      duration: "Dec 2025 – April 2026",
+      location: "Delaware, US (Remote)",
       bullets: [
-        "Built and maintained scalable web applications serving X,000+ users using Next.js and Node.js",
-        "Integrated AI features including RAG-based chatbots and LLM-powered search into production products",
-        "Led frontend architecture decisions, reducing page load time by X% through code splitting and caching",
-        "Collaborated with cross-functional teams across design, product, and infrastructure",
+        "Developed scalable backend modules and APIs using NestJS and also contributed on their own product HeatFleet, an online heating oil marketplace.",
+        "Built a multi-assistant voice AI workflow using VAPI with context management and assistant routing.",
+        "Created an AI video generation pipeline using Redis queues, workers, FFmpeg, and BunnyCDN.",
+        "Built an image-to-transcript-to-audio pipeline that extracted text from images and generated speech output using Hugging Face TTS models to automate audio generation workflows.",
+        "Hosted the Wan 2.1 video model on Runpod GPU infrastructure and optimized resource usage.",
+        "Improved frontend performance through image prioritization, eager loading, and faster rendering.",
+        "Wrote automation scripts for bulk data correction and repetitive operational tasks.",
+        "Integrated ImageKit to serve optimized AVIF/WebP images and reduce bandwidth usage."
       ],
     },
-    {
+    /* {
       company: "Another Company",
       role: "Software Engineer Intern",
       duration: "Jun 2023 – Dec 2023",
@@ -46,51 +50,47 @@ When I'm not coding, you'll find me contributing to open source, writing technic
         "Implemented automated testing pipelines reducing bug escape rate by X%",
         "Contributed to open-source tooling used by the engineering team",
       ],
-    },
+    }, */
   ],
 
   projects: [
     {
       name: "Portfolio RAG",
       description:
-        "This very portfolio — a retro-terminal-themed website with a RAG-powered AI chatbot that answers recruiter questions about me using my portfolio data as the knowledge base. Built with Next.js, Gemini API, and Framer Motion.",
-      tech: ["Next.js", "TypeScript", "Gemini API", "Framer Motion", "TailwindCSS"],
+        "This very portfolio website with a RAG-powered AI chatbot that answers recruiter questions about me using my portfolio data as the knowledge base. Built with Next.js, Gemini API, and Framer Motion.",
+      tech: ["Next.js", "TypeScript", "Gemini API", "Framer Motion", "TailwindCSS", "RAG"],
       link: "https://github.com/Abusadat18/Portfolio_RAG",
     },
     {
-      name: "Project Name Here",
+      name: "Edemy | LMS Platform",
       description:
-        "A brief description of what this project does, the problem it solves, and the impact it had. Mention any notable metrics (users, performance improvements, etc.).",
-      tech: ["React", "Node.js", "PostgreSQL", "Docker"],
-      link: "https://github.com/Abusadat18/your-project",
+        "A Learning Management System (LMS) like Udemy built with a React frontend and an Express & MongoDB backend with Clerk Authentication and Stripe Payment integration. Separate Educator account and Student Account Educator dashboard",
+      tech: ["React", "Node.js", "MongoDB", "Stripe", "Clerk"],
+      link: "https://lms-app-client.vercel.app/",
     },
-    {
+    /* {
       name: "Another Project",
       description:
         "Description of another impressive project. Focus on the technical challenge you solved and the value it delivered.",
       tech: ["Python", "FastAPI", "LangChain", "Pinecone"],
       link: "https://github.com/Abusadat18/another-project",
-    },
+    }, */
   ],
 
   education: {
-    degree: "Bachelor of Science in Computer Science",
-    university: "Your University Name",
-    year: "2020 – 2024",
-    gpa: "3.8 / 4.0",
+    degree: "Bachelor of technology in Computer Science",
+    university: "University of Engineering & Management, Kolkata",
+    year: "2022 – 2026",
+    gpa: "7.9/10",
     highlights: [
-      "Relevant coursework: Data Structures, Algorithms, Machine Learning, Distributed Systems",
-      "Dean's List — multiple semesters",
-      "Capstone project: [Brief description of your capstone]",
+      "Relevant coursework: Data Structures, Algorithms, Distributed Systems, Operating Systems, Database Management, Computer Networks, Artificial Intelligence",
+      "Capstone project: Siksharthi: A Hybrid Framework for Automated Answer Grading Using BM25 and Semantic Cross-Encoders",
     ],
   },
 
   achievements: [
-    "Won [Hackathon Name] hackathon — built [what] in 24 hours",
-    "Open source contributor to [project name] with X+ stars on GitHub",
-    "Published article on [topic] — X,000+ reads on Medium/Dev.to",
-    "Speaker at [event/meetup] on [topic]",
-    "Certified: [AWS / GCP / Azure / other certification]",
+    "Established and managed an creative agency offering a range of services, serving over 20 clients around the world",
+    "Certification: Python for Data Science, AI & Development IBM,  Adobe Photoshop for Designers",
   ],
 
   openToWork: true,
