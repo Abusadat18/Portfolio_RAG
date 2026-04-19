@@ -3,44 +3,48 @@
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
 import GradientOrbs from "@/components/ui/GradientOrbs";
-import {
-  SiTypescript, SiJavascript, SiPython, SiHtml5, SiCss,
-  SiNextdotjs, SiReact, SiNodedotjs, SiExpress, SiFastapi, SiTailwindcss,
-  SiLangchain, SiFastify,
-  SiPostgresql, SiMongodb, SiRedis,
-  SiGit, SiDocker, SiGithubactions, SiVercel,
-} from "@icons-pack/react-simple-icons";
-import { Database, BrainCircuit, Sparkles } from "lucide-react";
+import { SiPrisma } from "@icons-pack/react-simple-icons";
+import { BrainCircuit, Sparkles, Database, MessageSquareCode, Layers, Phone, Plug } from "lucide-react";
+
 
 interface Skill {
   name: string;
-  icon: React.ComponentType<{ className?: string; size?: number }>;
+  icon: React.ComponentType<{ className?: string; size?: number }> | string;
 }
 
 const SKILLS: Skill[] = [
-  { name: "TypeScript", icon: SiTypescript },
-  { name: "JavaScript", icon: SiJavascript },
-  { name: "Python", icon: SiPython },
-  { name: "HTML", icon: SiHtml5 },
-  { name: "CSS", icon: SiCss },
-  { name: "Next.js", icon: SiNextdotjs },
-  { name: "React", icon: SiReact },
-  { name: "Node.js", icon: SiNodedotjs },
-  { name: "Express", icon: SiExpress },
-  { name: "FastAPI", icon: SiFastapi },
-  { name: "Tailwind", icon: SiTailwindcss },
-  { name: "LangChain", icon: SiLangchain },
-  { name: "OpenAI", icon: BrainCircuit },
-  { name: "Gemini", icon: Sparkles },
-  { name: "SQL", icon: Database },
-  { name: "PostgreSQL", icon: SiPostgresql },
-  { name: "MongoDB", icon: SiMongodb },
-  { name: "Redis", icon: SiRedis },
-  { name: "Git", icon: SiGit },
-  { name: "Docker", icon: SiDocker },
-  { name: "GH Actions", icon: SiGithubactions },
-  { name: "Vercel", icon: SiVercel },
-  { name: "RAG", icon: SiFastify },
+  // Languages
+  { name: "JavaScript", icon: "/icons/javascript.svg" },
+  { name: "TypeScript", icon: "/icons/typescript.svg" },
+  { name: "Python", icon: "/icons/python.svg" },
+  { name: "Java", icon: "/icons/java.svg" },
+  { name: "C++", icon: "/icons/cplusplus.svg" },
+  // Frameworks / Libraries
+  { name: "React", icon: "/icons/react.svg" },
+  { name: "Next.js", icon: "/icons/nextjs.svg" },
+  { name: "Express.js", icon: "/icons/express.svg" },
+  { name: "NestJS", icon: "/icons/nestjs.svg" },
+  { name: "Tailwind", icon: "/icons/tailwindcss.svg" },
+  { name: "Prisma", icon: SiPrisma },
+  // AI / ML
+  { name: "Agentic AI", icon: BrainCircuit },
+  { name: "RAG", icon: Sparkles },
+  { name: "Vector DBs", icon: Database },
+  { name: "Prompt Eng.", icon: MessageSquareCode },
+  { name: "MCP", icon: Plug },
+  // Developer Tools
+  { name: "Git", icon: "/icons/git.svg" },
+  { name: "GitHub", icon: "/icons/github.svg" },
+  { name: "Postman", icon: "/icons/postman.svg" },
+  { name: "VS Code", icon: "/icons/vscode.svg" },
+  { name: "Redis", icon: "/icons/redis.svg" },
+  { name: "Docker", icon: "/icons/docker.svg" },
+  { name: "Figma", icon: "/icons/figma.svg" },
+  { name: "Photoshop", icon: "/icons/photoshop.svg" },
+  // Databases
+  { name: "PostgreSQL", icon: "/icons/postgresql.svg" },
+  { name: "MongoDB", icon: "/icons/mongodb.svg" },
+  { name: "MySQL", icon: "/icons/mysql.svg" },
 ];
 
 const container = {
@@ -90,7 +94,27 @@ export default function SkillsGrid() {
               }}
               className="glass-card flex flex-col items-center justify-center p-3 sm:p-4 aspect-square cursor-default"
             >
-              <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-[#33ff66] mb-2" size={32} />
+              {typeof Icon === "string" ? (
+                <div
+                  className="w-6 h-6 sm:w-8 sm:h-8 mb-2"
+                  style={{
+                    backgroundColor: "#33ff66",
+                    maskImage: `url(${Icon})`,
+                    WebkitMaskImage: `url(${Icon})`,
+                    maskSize: "contain",
+                    WebkitMaskSize: "contain",
+                    maskRepeat: "no-repeat",
+                    WebkitMaskRepeat: "no-repeat",
+                    maskPosition: "center",
+                    WebkitMaskPosition: "center",
+                  }}
+                />
+              ) : (
+                <Icon
+                  className="w-6 h-6 sm:w-8 sm:h-8 text-[#33ff66] mb-2"
+                  size={32}
+                />
+              )}
               <span className="text-[var(--text-secondary)] text-[10px] sm:text-xs text-center leading-tight">
                 {name}
               </span>
