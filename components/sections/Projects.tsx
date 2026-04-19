@@ -66,11 +66,6 @@ export default function Projects() {
                 </div>
               )}
 
-              {/* Project number */}
-              <span className="font-code text-[#33ff66]/20 text-6xl sm:text-7xl font-bold absolute -top-2 -right-1 sm:right-4 select-none pointer-events-none">
-                {String(idx + 1).padStart(2, "0")}
-              </span>
-
               <div className="flex items-start gap-3 mb-3 relative">
                 <h3 className="text-xl sm:text-2xl font-bold text-[#33ff66]">
                   {project.name}
