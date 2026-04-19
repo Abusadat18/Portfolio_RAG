@@ -125,13 +125,13 @@ export default function Hero() {
                 boxShadow: "0 0 30px rgba(51,255,102,0.25), 0 0 60px rgba(51,255,102,0.1)",
               }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-xl
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl
                          bg-[#33ff66]/10 border border-[#33ff66]/30
-                         text-[#33ff66] font-semibold text-lg
+                         text-[#33ff66] font-semibold 
                          hover:bg-[#33ff66]/15 hover:border-[#33ff66]/50
-                         transition-colors"
+                         transition-colors text-base"
             >
-              <span className="font-code text-base">{">"}_</span>
+              <span className="font-code">{">"}_</span>
               Ask My AI
             </motion.span>
           </Link>
@@ -142,7 +142,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl
                        border border-[var(--border)] text-[var(--text-secondary)]
                        hover:text-[var(--text-primary)] hover:border-[var(--border-hover)]
-                       transition-colors text-base"
+                       transition-colors text-base font-semibold"
           >
             <ArrowDown className="w-4 h-4" />
             View My Work
