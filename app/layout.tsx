@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Abu Sadat Ansari — Portfolio",
   description:
     "Full Stack Developer & AI Engineer. Ask my AI assistant anything about my skills, projects, and experience.",
+  icons: {
+    icon: "/icons/code-fav.png",
+  },
   openGraph: {
     title: "Abu Sadat Ansari — Portfolio",
     description: "Interactive RAG-powered portfolio. Ask me anything.",

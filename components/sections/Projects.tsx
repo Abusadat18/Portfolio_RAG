@@ -52,9 +52,7 @@ export default function Projects() {
                 boxShadow: "0 0 30px rgba(51,255,102,0.1)",
                 y: -4,
               }}
-              className={`glass-card p-6 sm:p-8 flex flex-col group relative overflow-hidden ${
-                idx === 0 ? "md:col-span-2" : ""
-              }`}
+              className={`glass-card p-6 sm:p-8 flex flex-col group relative overflow-hidden`}
             >
               {/* Featured badge for first project */}
               {idx === 0 && (

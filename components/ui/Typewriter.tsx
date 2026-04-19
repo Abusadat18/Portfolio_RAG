@@ -6,7 +6,7 @@ const ROLES = [
   "Full Stack Developer",
   "AI Engineer",
   "RAG Specialist",
-  "Open Source Contributor",
+  "Quick Learner",
   "Problem Solver",
 ];
 
