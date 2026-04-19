@@ -59,7 +59,7 @@ export default function Navbar() {
           href="/"
           className="font-code text-[#33ff66] text-sm sm:text-base font-medium hover:opacity-80 transition-opacity"
         >
-          {"<"}abu{" />"}
+          {"<"}Sadat{"/>"}
         </Link>
 
         {/* Desktop nav */}
