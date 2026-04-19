@@ -12,7 +12,7 @@ const WELCOME: Message = {
     "Hello! I'm Abu Sadat's AI assistant. Ask me anything about his skills, projects, experience, or how to get in touch. What would you like to know?",
 };
 
-export default function ChatWindow() {
+export default function ChatWindow({ messagesClassName }: { messagesClassName?: string } = {}) {
   const [messages, setMessages] = useState<Message[]>([WELCOME]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -94,7 +94,7 @@ export default function ChatWindow() {
     >
       <TerminalWindow title="chat.exe" animate={false}>
         {/* Messages */}
-        <div className="h-[380px] sm:h-[420px] overflow-y-auto px-4 sm:px-6 pt-5 scrollbar-thin scrollbar-track-transparent">
+        <div className={`${messagesClassName || "h-[380px] sm:h-[420px]"} overflow-y-auto px-4 sm:px-6 pt-5 scrollbar-thin scrollbar-track-transparent`}>
           {messages.map((msg, i) => (
             <MessageBubble key={i} {...msg} />
           ))}

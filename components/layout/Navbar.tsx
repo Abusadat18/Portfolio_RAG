@@ -1,0 +1,133 @@
+"use client";
+
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { MessageSquare, ArrowLeft, Menu, X } from "lucide-react";
+
+const navLinks = [
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
+
+export default function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[var(--bg)]/70 border-b border-[var(--border)]">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+        {/* Logo */}
+        <Link
+          href="/"
+          className="font-code text-[#33ff66] text-sm sm:text-base font-medium hover:opacity-80 transition-opacity"
+        >
+          {"<"}abu{" />"}
+        </Link>
+
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-1">
+          {isHome ? (
+            <>
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="px-3 py-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors rounded-lg hover:bg-[#33ff66]/5"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </>
+          ) : (
+            <Link
+              href="/"
+              className="flex items-center gap-2 px-3 py-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors rounded-lg hover:bg-[#33ff66]/5"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Portfolio
+            </Link>
+          )}
+
+          {/* CTA */}
+          {isHome && (
+            <Link
+              href="/chat"
+              className="ml-3 inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium
+                         bg-[#33ff66]/10 border border-[#33ff66]/25 text-[#33ff66]
+                         hover:bg-[#33ff66]/15 hover:border-[#33ff66]/40 transition-colors"
+            >
+              <MessageSquare className="w-4 h-4" />
+              Ask My AI
+            </Link>
+          )}
+        </div>
+
+        {/* Mobile: CTA + hamburger */}
+        <div className="flex md:hidden items-center gap-3">
+          {isHome && (
+            <Link
+              href="/chat"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium
+                         bg-[#33ff66]/10 border border-[#33ff66]/25 text-[#33ff66]"
+            >
+              <MessageSquare className="w-3.5 h-3.5" />
+              Ask AI
+            </Link>
+          )}
+          {!isHome && (
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium
+                         text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              Portfolio
+            </Link>
+          )}
+          {isHome && (
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+            >
+              {mobileOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {mobileOpen && isHome && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden border-t border-[var(--border)] bg-[var(--bg)]/90 backdrop-blur-xl overflow-hidden"
+          >
+            <div className="px-5 py-4 space-y-1">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-3 py-2.5 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[#33ff66]/5 rounded-lg transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
+}

@@ -62,7 +62,7 @@ const item = {
 
 export default function SkillsGrid() {
   return (
-    <section className="relative w-full max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
+    <section id="skills" className="relative w-full max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-28">
       <GradientOrbs variant="section" />
 
       <div className="relative z-10">

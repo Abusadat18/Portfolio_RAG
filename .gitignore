@@ -36,3 +36,5 @@ next-env.d.ts
 
 # embeddings (regenerate locally)
 /data/vectors.json
+
+CLAUDE.md

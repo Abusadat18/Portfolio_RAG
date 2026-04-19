@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import CustomCursor from "@/components/ui/CustomCursor";
+import Navbar from "@/components/layout/Navbar";
 
 export const metadata: Metadata = {
   title: "Abu Sadat Ansari — Portfolio",
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="antialiased">
       <body>
         <CustomCursor />
+        <Navbar />
         {children}
       </body>
     </html>

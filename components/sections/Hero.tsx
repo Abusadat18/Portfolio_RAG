@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Mail, UserCircle } from "lucide-react";
 import GlitchText from "@/components/ui/GlitchText";
@@ -107,22 +108,23 @@ export default function Hero() {
           initial="hidden"
           animate="show"
         >
-          <motion.a
-            href="#chat"
-            whileHover={{
-              scale: 1.04,
-              boxShadow: "0 0 30px rgba(51,255,102,0.25), 0 0 60px rgba(51,255,102,0.1)",
-            }}
-            whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-xl
-                       bg-[#33ff66]/10 border border-[#33ff66]/30
-                       text-[#33ff66] font-semibold text-lg
-                       hover:bg-[#33ff66]/15 hover:border-[#33ff66]/50
-                       transition-colors"
-          >
-            <span className="font-code text-base">{">"}_</span>
-            Ask My AI
-          </motion.a>
+          <Link href="/chat">
+            <motion.span
+              whileHover={{
+                scale: 1.04,
+                boxShadow: "0 0 30px rgba(51,255,102,0.25), 0 0 60px rgba(51,255,102,0.1)",
+              }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-xl
+                         bg-[#33ff66]/10 border border-[#33ff66]/30
+                         text-[#33ff66] font-semibold text-lg
+                         hover:bg-[#33ff66]/15 hover:border-[#33ff66]/50
+                         transition-colors"
+            >
+              <span className="font-code text-base">{">"}_</span>
+              Ask My AI
+            </motion.span>
+          </Link>
         </motion.div>
       </div>
 

@@ -2,10 +2,10 @@ export const portfolio = {
   personal: {
     name: "Abu Sadat Ansari",
     tagline: "Full Stack Developer & AI Engineer",
-    email: "your.email@example.com",
+    email: "itssadatansari@gmail.com",
     github: "https://github.com/Abusadat18",
-    linkedin: "https://linkedin.com/in/your-profile",
-    location: "Your City, Country",
+    linkedin: "https://www.linkedin.com/in/abusadatansari/",
+    location: "Kolkata, India",
     website: "https://your-portfolio.vercel.app",
   },
 
@@ -94,7 +94,7 @@ When I'm not coding, you'll find me contributing to open source, writing technic
   ],
 
   openToWork: true,
-  preferredRoles: ["Full Stack Developer", "AI Engineer", "Software Engineer", "Frontend Engineer"],
+  preferredRoles: ["Full Stack Developer", "AI Engineer", "Software Engineer"],
 };
 
 export type Portfolio = typeof portfolio;

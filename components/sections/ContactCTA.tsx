@@ -8,7 +8,7 @@ import { portfolio } from "@/data/portfolio";
 
 export default function ContactCTA() {
   return (
-    <section className="relative w-full max-w-5xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
+    <section id="contact" className="relative w-full max-w-5xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
       <GradientOrbs variant="section" />
 
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
