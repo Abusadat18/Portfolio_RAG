@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="text-center py-10 text-sm text-[var(--text-secondary)] border-t border-[var(--border)]">
       <p>
-        Built with Next.js, Gemini RAG & Framer Motion
+        Made with 💚 by Sadat
         <span className="mx-3 opacity-40">|</span>
         <a
           href="https://github.com/Abusadat18/Portfolio_RAG"
