@@ -20,7 +20,7 @@ export default function ChatPage() {
           title="Go ahead, ask my AI anything"
           description="It knows my skills, projects, and experience inside out — powered by RAG so every answer comes straight from my portfolio."
         />
-        <ChatWindow messagesClassName="h-[55vh] sm:h-[60vh]" />
+        <ChatWindow messagesClassName="h-[35vh] sm:h-[55vh]" />
       </div>
     </main>
   );

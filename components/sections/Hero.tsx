@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { SiGithub } from "@icons-pack/react-simple-icons";
-import { Mail, UserCircle } from "lucide-react";
+import { Mail, UserCircle, ArrowDown } from "lucide-react";
 import GlitchText from "@/components/ui/GlitchText";
 import Typewriter from "@/components/ui/Typewriter";
 import GradientOrbs from "@/components/ui/GradientOrbs";
@@ -13,6 +13,12 @@ const socials = [
   { label: "GitHub", href: portfolio.personal.github, icon: SiGithub },
   { label: "LinkedIn", href: portfolio.personal.linkedin, icon: UserCircle },
   { label: "Email", href: `mailto:${portfolio.personal.email}`, icon: Mail },
+];
+
+const stats = [
+  { value: `${portfolio.projects.length}+`, label: "Projects" },
+  { value: `${Object.values(portfolio.skills).flat().length}+`, label: "Technologies" },
+  { value: `${portfolio.experience.length}+`, label: "Roles" },
 ];
 
 const fadeUp = {
@@ -26,7 +32,7 @@ const fadeUp = {
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 pt-20 relative overflow-hidden">
       <GradientOrbs variant="hero" />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
@@ -72,13 +78,36 @@ export default function Hero() {
           {portfolio.about.split("\n\n")[0]}
         </motion.p>
 
+        {/* Stats row */}
+        <motion.div
+          custom={0.6}
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          className="flex items-center justify-center gap-6 sm:gap-10 mb-10 sm:mb-12"
+        >
+          {stats.map((stat, i) => (
+            <div key={stat.label} className="text-center">
+              {i > 0 && (
+                <div className="hidden" />
+              )}
+              <p className="text-2xl sm:text-3xl font-bold text-[#33ff66] font-code">
+                {stat.value}
+              </p>
+              <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-1">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </motion.div>
+
         {/* Social icons row */}
         <motion.div
           custom={0.7}
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="flex items-center justify-center gap-4 mb-12 sm:mb-14"
+          className="flex items-center justify-center gap-4 mb-10 sm:mb-12"
         >
           {socials.map((s) => (
             <motion.a
@@ -101,12 +130,13 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* CTA */}
+        {/* CTAs */}
         <motion.div
           custom={0.9}
           variants={fadeUp}
           initial="hidden"
           animate="show"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link href="/chat">
             <motion.span
@@ -125,6 +155,18 @@ export default function Hero() {
               Ask My AI
             </motion.span>
           </Link>
+          <motion.a
+            href="#experience"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl
+                       border border-[var(--border)] text-[var(--text-secondary)]
+                       hover:text-[var(--text-primary)] hover:border-[var(--border-hover)]
+                       transition-colors text-base"
+          >
+            <ArrowDown className="w-4 h-4" />
+            View My Work
+          </motion.a>
         </motion.div>
       </div>
 
