@@ -16,11 +16,13 @@ I specialize in building scalable web applications using Next.js, React, and Nod
 When I'm not coding, you'll find me contributing to open source, writing technical articles, or exploring the latest research in AI. I believe great software is a blend of clean code, thoughtful UX, and real-world impact.`,
 
   skills: {
-    languages: ["TypeScript", "JavaScript", "Python", "SQL", "HTML", "CSS"],
-    frameworks: ["Next.js", "React", "Node.js", "Express", "FastAPI", "TailwindCSS"],
-    ai_ml: ["LangChain", "RAG Pipelines", "OpenAI API", "Gemini API", "Hugging Face", "Vector Databases"],
+    languages: ["TypeScript", "JavaScript", "Python", "Java", "C++", "HTML", "CSS"],
+    frameworks: ["Next.js", "React", "Node.js", "Express", "Nest.js", "TailwindCSS"],
+    ai_ml: ["AI Integration", "RAG Pipelines", "Hugging Face", "Vector Databases", "Model Context Protocol", "Hosting AI Models"],
     databases: ["PostgreSQL", "MongoDB", "Redis", "Pinecone", "Supabase"],
-    tools: ["Git", "Docker", "GitHub Actions", "Vercel", "AWS", "Figma"],
+    tools: ["Git", "Docker", "GitHub Actions", "Vercel", "Photoshop", "Figma", 
+      "Postman"
+    ],
   },
 
   experience: [
@@ -65,7 +67,7 @@ When I'm not coding, you'll find me contributing to open source, writing technic
       name: "Edemy | LMS Platform",
       description:
         "A Learning Management System (LMS) like Udemy built with a React frontend and an Express & MongoDB backend with Clerk Authentication and Stripe Payment integration. Separate Educator account and Student Account Educator dashboard",
-      tech: ["React", "Node.js", "MongoDB", "Stripe", "Clerk"],
+      tech: ["React", "Node.js", "MongoDB", "Stripe", "Clerk", "Webhooks"],
       link: "https://lms-app-client.vercel.app/",
     },
     /* {
