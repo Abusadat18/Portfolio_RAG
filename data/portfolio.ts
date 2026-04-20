@@ -6,7 +6,7 @@ export const portfolio = {
     github: "https://github.com/Abusadat18",
     linkedin: "https://www.linkedin.com/in/abusadatansari/",
     location: "Kolkata, India",
-    website: "https://your-portfolio.vercel.app",
+    website: "https://www.abusadat.dev/",
   },
 
   about: `I'm Abu Sadat Ansari, a passionate Full Stack Developer and AI Engineer with a knack for building products that are both technically robust and visually compelling. I love working at the intersection of modern web technologies and artificial intelligence.
@@ -60,8 +60,8 @@ When I'm not coding, you'll find me contributing to open source, writing technic
       name: "Portfolio RAG",
       description:
         "This very portfolio website with a RAG-powered AI chatbot that answers recruiter questions about me using my portfolio data as the knowledge base. Built with Next.js, Gemini API, and Framer Motion.",
-      tech: ["Next.js", "TypeScript", "Gemini API", "Framer Motion", "TailwindCSS", "RAG"],
-      link: "https://github.com/Abusadat18/Portfolio_RAG",
+      tech: ["Next.js", "TypeScript", "Gemini API", "Framer Motion", "TailwindCSS", "RAG", "Vector DB"],
+      link: "https://www.abusadat.dev/chat",
     },
     {
       name: "Edemy | LMS Platform",

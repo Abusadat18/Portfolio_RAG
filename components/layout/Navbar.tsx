@@ -167,7 +167,14 @@ export default function Navbar() {
                   <a
                     key={link.label}
                     href={link.href}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setMobileOpen(false);
+                      const id = link.href.replace("#", "");
+                      setTimeout(() => {
+                        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+                      }, 300);
+                    }}
                     className={`block px-3 py-2.5 text-sm rounded-lg transition-colors ${
                       isActive
                         ? "text-[#33ff66] bg-[#33ff66]/5"
