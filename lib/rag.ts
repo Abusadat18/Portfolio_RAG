@@ -76,6 +76,70 @@ Highlights: ${education.highlights.join(" | ")}`,
     metadata: { section: "career" },
   });
 
+  // ── Chatbot-only deep-dive chunks ──────────────────────────────────────
+  if (portfolio.chatbotExtras) {
+    const extras = portfolio.chatbotExtras;
+
+    // Skill deep-dives — one chunk per skill area
+    if (extras.skillDeepDives) {
+      for (const [skill, content] of Object.entries(extras.skillDeepDives)) {
+        chunks.push({
+          text: `Deep dive on ${skill.replace(/_/g, " ")}:\n${content}`,
+          metadata: { section: "skill-deep-dive" },
+        });
+      }
+    }
+
+    // Project deep-dives — one chunk per project
+    if (extras.projectDeepDives) {
+      for (const [project, content] of Object.entries(extras.projectDeepDives)) {
+        chunks.push({
+          text: `Project deep dive — ${project}:\n${content}`,
+          metadata: { section: "project-deep-dive" },
+        });
+      }
+    }
+
+    // Experience deep-dives — one chunk per company
+    if (extras.experienceDeepDives) {
+      for (const [company, content] of Object.entries(extras.experienceDeepDives)) {
+        chunks.push({
+          text: `Experience deep dive — ${company}:\n${content}`,
+          metadata: { section: "experience-deep-dive" },
+        });
+      }
+    }
+
+    // Philosophy, learning, motivation, soft skills — one chunk each
+    if (extras.problemSolvingPhilosophy) {
+      chunks.push({
+        text: `Problem-solving and engineering philosophy:\n${extras.problemSolvingPhilosophy}`,
+        metadata: { section: "philosophy" },
+      });
+    }
+
+    if (extras.learningAndGrowth) {
+      chunks.push({
+        text: `Learning approach and growth:\n${extras.learningAndGrowth}`,
+        metadata: { section: "learning" },
+      });
+    }
+
+    if (extras.careerMotivation) {
+      chunks.push({
+        text: `Career motivation and goals:\n${extras.careerMotivation}`,
+        metadata: { section: "motivation" },
+      });
+    }
+
+    if (extras.softSkills) {
+      chunks.push({
+        text: `Communication and collaboration:\n${extras.softSkills}`,
+        metadata: { section: "soft-skills" },
+      });
+    }
+  }
+
   return chunks;
 }
 
@@ -92,7 +156,7 @@ function cosineSimilarity(a: number[], b: number[]): number {
 export function retrieveContext(
   queryEmbedding: number[],
   chunks: Chunk[],
-  topK = 4
+  topK = 6
 ): string {
   const scored = chunks.map((chunk) => ({
     text: chunk.text,
