@@ -12,7 +12,15 @@ type Block =
   | { type: "project"; name: string; description: string; tech: string[]; link: string }
   | { type: "contact"; contactType: string; value: string; link: string };
 
+function ensureClosedBlocks(raw: string): string {
+  const opens = (raw.match(/^:::(project|contact)/gm) || []).length;
+  const closes = (raw.match(/^:::$/gm) || []).length;
+  if (opens > closes) return raw.trimEnd() + "\n:::";
+  return raw;
+}
+
 function parseBlocks(raw: string): Block[] {
+  raw = ensureClosedBlocks(raw);
   const blocks: Block[] = [];
   const regex = /:::(project|contact)\n([\s\S]*?):::/g;
   let lastIndex = 0;

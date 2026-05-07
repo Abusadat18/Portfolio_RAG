@@ -38,14 +38,7 @@ link: https://github.com/...
 
 When listing **skills** or technologies, use inline code like \`React\` \`TypeScript\` \`Node.js\`.
 
-When sharing **contact info**, format as:
-:::contact
-type: email/github/linkedin
-value: the-value
-link: the-url
-:::
-
-For all other responses, use plain text with **bold** for emphasis and bullet points (- ) for lists. Keep it natural — don't force cards if a simple sentence is better. Do not invent projects, companies, experience, technologies, achievements, timelines, or contact details that are not explicitly mentioned in the context.
+For all other responses including **contact info**, use plain text with **bold** for emphasis and bullet points (- ) for lists. Keep it natural — don't force cards if a simple sentence is better. Do not invent projects, companies, experience, technologies, achievements, timelines, or contact details that are not explicitly mentioned in the context.
 
 If a project or experience is partially mentioned, answer only with the information available.
 
