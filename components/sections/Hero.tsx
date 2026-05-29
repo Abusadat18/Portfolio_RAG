@@ -8,6 +8,7 @@ import GlitchText from "@/components/ui/GlitchText";
 import Typewriter from "@/components/ui/Typewriter";
 import GradientOrbs from "@/components/ui/GradientOrbs";
 import { portfolio } from "@/data/portfolio";
+import { sendGAEvent } from "@next/third-parties/google";
 
 const socials = [
   { label: "GitHub", href: portfolio.personal.github, icon: SiGithub },
@@ -122,6 +123,7 @@ export default function Hero() {
             href="https://ik.imagekit.io/44ehnyqos/Portfolio/Sadat_Resume-V1.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => sendGAEvent("event", "resume_view")}
             whileHover={{
               scale: 1.04,
               boxShadow: "0 0 30px rgba(51,255,102,0.25), 0 0 60px rgba(51,255,102,0.1)",

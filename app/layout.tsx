@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import CustomCursor from "@/components/ui/CustomCursor";
 import Navbar from "@/components/layout/Navbar";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: "Abu Sadat Ansari — Portfolio",
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CustomCursor />
         <Navbar />
         {children}
+        <GoogleAnalytics gaId="G-R9EDKFGXK8" />
       </body>
     </html>
   );
