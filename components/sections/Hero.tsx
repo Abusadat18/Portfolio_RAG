@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { SiReaddotcv } from "@icons-pack/react-simple-icons";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Mail, UserCircle, ArrowDown } from "lucide-react";
 import GlitchText from "@/components/ui/GlitchText";
@@ -118,23 +118,24 @@ export default function Hero() {
           animate="show"
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Link href="/chat">
-            <motion.span
-              whileHover={{
-                scale: 1.04,
-                boxShadow: "0 0 30px rgba(51,255,102,0.25), 0 0 60px rgba(51,255,102,0.1)",
-              }}
-              whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl
-                         bg-[#33ff66]/10 border border-[#33ff66]/30
-                         text-[#33ff66] font-semibold 
-                         hover:bg-[#33ff66]/15 hover:border-[#33ff66]/50
-                         transition-colors text-base"
-            >
-              <span className="font-code">{">"}_</span>
-              Ask My AI
-            </motion.span>
-          </Link>
+          <motion.a
+            href="https://ik.imagekit.io/44ehnyqos/Portfolio/Sadat_Resume-V1.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{
+              scale: 1.04,
+              boxShadow: "0 0 30px rgba(51,255,102,0.25), 0 0 60px rgba(51,255,102,0.1)",
+            }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl
+                       bg-[#33ff66]/10 border border-[#33ff66]/30
+                       text-[#33ff66] font-semibold
+                       hover:bg-[#33ff66]/15 hover:border-[#33ff66]/50
+                       transition-colors text-base"
+          >
+            <SiReaddotcv size={18} />
+            View Resume
+          </motion.a>
           <motion.a
             href="#experience"
             whileHover={{ scale: 1.04 }}
